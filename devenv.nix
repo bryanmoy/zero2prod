@@ -5,7 +5,11 @@
   # env.GREET = "devenv";
 
   # https://devenv.sh/packages/
-  packages = [ pkgs.openssl ];
+  packages = with pkgs; [
+    openssl
+
+    cargo-udeps
+  ];
 
   # https://devenv.sh/scripts/
   # scripts.hello.exec = "echo hello from $GREET";
@@ -27,7 +31,10 @@
   };
 
   # https://devenv.sh/languages/
-  languages.rust.enable = true;
+  languages.rust = {
+    enable = true;
+    channel = "nightly";
+  };
 
   # https://devenv.sh/pre-commit-hooks/
   # pre-commit.hooks.shellcheck.enable = true;
