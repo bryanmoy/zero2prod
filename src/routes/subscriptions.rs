@@ -1,6 +1,5 @@
 use chrono::Utc;
 use sqlx::PgPool;
-use tracing::Instrument;
 use uuid::Uuid;
 
 use actix_web::{web, HttpResponse};
